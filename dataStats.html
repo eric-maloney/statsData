@@ -204,37 +204,52 @@
     <div id="A2">
         <h3>Find the mean of the quiz grades for the first penguin.</h3>
         <script>
-            var getquizgrade = function (quiz)
+            var getquizgrade = function(quiz)
             {
                 return quiz.grade;
             }
-            var quizgrade = classroom[0].quizzes.map(getquizgrade);
-            d3.mean(quizgrade);
-            report("#A2", quizgrades)
+            var quizgradefirstmean = classroom[0].quizes;
+            var quizgrade=quizgradefirstmean.map (getquizgrade);
+            var mean =d3.mean(quizgrade);        
+                               
+            report("#A2",mean)
         </script>
     </div>
 
     <div id="A3">
         <h3>Create a function to find the mean of the quiz grades for a given penguin.</h3>
         <script>
-            var answer = "please complete";
-            report("#A3", answer)
+            var meanquizgradegiven = function(quiz)
+            {
+                return quiz.grade;
+            }
+            var givenmean = classroom[1].quizes;
+            var quizmeans =givenmean.map(meanquizgradegiven)
+            var mean2= d3.mean(quizmeans);
+            report("#A3", mean2)
         </script>
     </div>
 
     <div id="A4">
         <h3>Create an array of the mean quiz score of each penguins. Use one line of "code"</h3>
         <script>
-            var answer = "please complete";
-            report("#A4", answer)
+            var quizarray = function(quiz){return quiz.grade;}var array=classroom.quizes;
+            report("#A4", array)
         </script>
     </div>
 
     <div id="A5">
         <h3>Find the mean of all the quiz scores of the class. (one number)</h3>
         <script>
-            var answer = "please complete";
-            report("#A5", answer)
+             var meanquizgradeall=function(quiz)
+            {
+                return quiz.grade;
+            }
+            var allmean=classroom.quizes;
+            var quizall=allmean.map(meanquizgradeall);
+            var meanall=d3.mean(quizall);
+        
+            report("#A5", meanall)
         </script>
     </div>
 
